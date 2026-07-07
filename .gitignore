@@ -3,3 +3,6 @@ dist
 .vite
 .resume_extract
 resume-source.docx
+.deploy-grz
+portfolio-deploy
+portfolio-deploy.zip

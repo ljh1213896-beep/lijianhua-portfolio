@@ -14,40 +14,79 @@ import './styles.css';
 
 const projects = [
   {
-    title: '西南民族大学校图书馆 2-4 楼改造设计',
-    role: '设计总负责',
-    time: '2024.09 - 至今',
-    image: '/assets/project-1.jpg',
-    meta: '5350m2 / 已落地 80%',
+    title: '地球之盐 - 运城盐湖湿地生态鸟岛与盐文化场景重塑设计',
+    role: '生态场景 / 盐文化叙事',
+    time: 'Portfolio 2024',
+    image: '/assets/portfolio-web/page-04-1.webp',
+    meta: 'Wetland / Cultural Landscape',
     summary:
-      '基于实地测绘与需求曲线完成空间改造方案，参与采购需求、标书撰写、厂家与现场对接。',
+      '围绕盐湖湿地生态修复、观鸟动线和盐文化体验展开场景重塑，建立自然教育、游览体验和地域记忆之间的空间关系。',
+    pages: [
+      '/assets/portfolio-web/page-04-1.webp',
+      '/assets/portfolio-web/page-05-1.webp',
+      '/assets/portfolio-web/page-06-1.webp',
+      '/assets/portfolio-web/page-07-1.webp',
+      '/assets/portfolio-web/page-08-1.webp',
+      '/assets/portfolio-web/page-09-1.webp',
+    ],
   },
   {
-    title: '四川省成都市红牌里两新艺术中心设计',
-    role: '设计主创',
-    time: '2024.07 - 2025.06',
-    image: '/assets/project-2.jpg',
-    meta: '商业定位 / 废土风酒吧',
+    title: '“Mcdicval Pirate”中世纪元素中古店空间设计',
+    role: '商业空间 / 叙事设计',
+    time: 'Portfolio 2024',
+    image: '/assets/portfolio-web/page-10-1.webp',
+    meta: 'Retail / Narrative Interior',
     summary:
-      '从上位规划出发完成概念汇报、场地定位与商业模式推演，探索具有差异化体验的空间语言。',
+      '以中世纪海盗叙事为线索，将中古店零售、展陈、社交和沉浸体验整合为统一的空间故事。',
+    pages: [
+      '/assets/portfolio-web/page-10-1.webp',
+      '/assets/portfolio-web/page-11-1.webp',
+      '/assets/portfolio-web/page-12-1.webp',
+    ],
   },
   {
-    title: '江西省赣州市赣县区义源村旅游规划设计',
-    role: '设计主创',
-    time: '2024.03 - 2024.07',
-    image: '/assets/project-3.jpg',
-    meta: '650 亩 / 成功中标',
+    title: '秋风市集 - 城市更新背景下的创意集市空间设计',
+    role: '城市更新 / 公共商业',
+    time: 'Portfolio 2024',
+    image: '/assets/portfolio-web/page-16-1.webp',
+    meta: 'Market / Urban Renewal',
     summary:
-      '结合调研与上位规划，提出康养之城概念，完成概念草图、初步平面及 AI 场景效果图。',
+      '在城市更新语境中重构集市空间，以轻介入、可运营和可停留的公共商业界面激活场地日常。',
+    pages: [
+      '/assets/portfolio-web/page-16-1.webp',
+      '/assets/portfolio-web/page-17-1.webp',
+      '/assets/portfolio-web/page-17-2.webp',
+      '/assets/portfolio-web/page-18-1.webp',
+      '/assets/portfolio-web/page-18-2.webp',
+    ],
   },
   {
-    title: '青触 - 共筑乡村振兴创意融媒先行者',
-    role: '省级大创项目负责人',
-    time: '2024.06 - 至今',
-    image: '/assets/project-4.jpg',
-    meta: '文创研究 / 展陈策划',
+    title: '“汐月书庭”西南民大航空港校区图书馆改造',
+    role: '校园更新 / 阅读空间',
+    time: 'Portfolio 2024',
+    image: '/assets/portfolio-web/page-19-1.webp',
+    meta: 'Library / Campus Renewal',
     summary:
-      '围绕校园文创纪念品设计、文化提炼与再创造方法开展研究，推动产品策划与设计实现。',
+      '以校园图书馆更新为对象，整合自习、交流、文献展示和复合阅读体验，形成更开放的学习场景。',
+    pages: [
+      '/assets/portfolio-web/page-19-1.webp',
+      '/assets/portfolio-web/page-20-1.webp',
+      '/assets/portfolio-web/page-21-1.webp',
+    ],
+  },
+  {
+    title: '从“游走”到“扎根”数字游民社区办公空间设计',
+    role: '乡村振兴 / 社区办公',
+    time: 'Portfolio 2024',
+    image: '/assets/portfolio-web/page-22-1.webp',
+    meta: 'Nomad Community / Rural Revitalization',
+    summary:
+      '从数字游民的迁移、共创与长期驻留需求出发，探索乡村语境下的复合办公、生活和社群空间。',
+    pages: [
+      '/assets/portfolio-web/page-22-1.webp',
+      '/assets/portfolio-web/page-23-1.webp',
+      '/assets/portfolio-web/page-23-2.webp',
+    ],
   },
 ];
 
@@ -75,10 +114,10 @@ const strengths = [
 ];
 
 const stats = [
-  ['10+', '省级及以上奖项'],
+  ['13+', '设计竞赛与荣誉'],
   ['5350m2', '单项目改造面积'],
-  ['650 亩', '乡村规划尺度'],
-  ['3.74/4', 'GPA'],
+  ['1/97', '综测排名'],
+  ['3.77/4', 'GPA'],
 ];
 
 function App() {
@@ -91,10 +130,11 @@ function App() {
         <nav aria-label="主导航">
           <a href="#about">经历</a>
           <a href="#projects">项目</a>
+          <a href="#cases">内页</a>
           <a href="#strengths">优势</a>
           <a href="#contact">联系</a>
         </nav>
-        <a className="nav-contact" href="mailto:chuan18778086001@163.com">
+        <a className="nav-contact" href="mailto:2425527779@qq.com">
           <Mail size={16} />
           联系我
         </a>
@@ -127,9 +167,9 @@ function App() {
                 查看精选项目
                 <ArrowUpRight size={18} />
               </a>
-              <a className="ghost-link" href="tel:18778086001">
+              <a className="ghost-link" href="tel:13408554084">
                 <Phone size={18} />
-                18778086001
+                13408554084
               </a>
             </div>
           </div>
@@ -147,20 +187,20 @@ function App() {
                 西南民族大学环境设计专业。具备丰富的实践项目经验、团队统筹能力与科研素养，长期参与校园空间更新、商业空间概念设计、乡村规划设计和融媒体视觉策划。
               </p>
               <p>
-                现任环境设计系实践工作组组长、梁建国环境设计与陈设艺术研究所第一工作室负责人，并参与中西部乡村振兴环境设计竞赛秘书处、城市精英设计师教学实践竞赛等工作。
+                现任环境设计系实践工作组组长、梁建国环境设计与陈设艺术研究所第一工作室负责人。获得国家奖学金、本科生一等奖学金、四川省大学生综合素质 A 级证书等荣誉。
               </p>
               <div className="contact-list">
                 <span>
                   <MapPin size={16} />
                   四川成都
                 </span>
-                <a href="mailto:chuan18778086001@163.com">
+                <a href="mailto:2425527779@qq.com">
                   <Mail size={16} />
-                  chuan18778086001@163.com
+                  2425527779@qq.com
                 </a>
-                <a href="tel:18778086001">
+                <a href="tel:13408554084">
                   <Phone size={16} />
-                  18778086001
+                  13408554084
                 </a>
               </div>
             </div>
@@ -183,7 +223,7 @@ function App() {
                 <h2>精选项目</h2>
               </div>
               <p>
-                以真实简历项目为基础，当前图片为基础版视觉占位，后续可替换为实景、效果图或完整项目册。
+                参考作品集 PDF 重新整理项目顺序，以真实作品页作为封面和详情图，突出空间叙事、场地研究和视觉表达。
               </p>
             </div>
             <div className="project-grid">
@@ -207,6 +247,39 @@ function App() {
           </div>
         </section>
 
+        <section className="case-pages section" id="cases">
+          <div className="container">
+            <div className="section-head compact">
+              <div>
+                <p className="section-kicker">Project Pages</p>
+                <h2>作品集内页</h2>
+              </div>
+              <p>
+                保留原作品集的版面信息密度，同时用暗色网页环境重新组织浏览节奏，适合 PC 端连续查看。
+              </p>
+            </div>
+            <div className="case-stack">
+              {projects.map((project, index) => (
+                <article className="case-block" key={project.title}>
+                  <aside>
+                    <span>{String(index + 1).padStart(2, '0')}</span>
+                    <h3>{project.title}</h3>
+                    <p>{project.summary}</p>
+                    <em>{project.meta}</em>
+                  </aside>
+                  <div className="case-gallery">
+                    {project.pages.map((page, pageIndex) => (
+                      <figure key={page}>
+                        <img src={page} alt={`${project.title} 作品页 ${pageIndex + 1}`} loading="lazy" />
+                      </figure>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="strengths section" id="strengths">
           <div className="container">
             <div className="section-head compact">
@@ -214,7 +287,7 @@ function App() {
                 <p className="section-kicker">Capabilities</p>
                 <h2>个人优势</h2>
               </div>
-              <p>AutoCAD / SketchUp / Photoshop / Illustrator / CorelDRAW / Enscape / D5</p>
+              <p>AutoCAD / SketchUp / Photoshop / Illustrator / C4D / Blender / Midjourney / Stable Diffusion / D5</p>
             </div>
             <div className="strength-grid">
               {strengths.map(({ icon: Icon, title, text }) => (
@@ -233,11 +306,11 @@ function App() {
             <p className="section-kicker">Contact</p>
             <h2>期待与你讨论空间、场景与设计表达的下一种可能。</h2>
             <div className="contact-actions">
-              <a className="primary-link" href="mailto:chuan18778086001@163.com">
+              <a className="primary-link" href="mailto:2425527779@qq.com">
                 <Mail size={18} />
                 发送邮件
               </a>
-              <a className="ghost-link" href="tel:18778086001">
+              <a className="ghost-link" href="tel:13408554084">
                 <Phone size={18} />
                 电话联系
               </a>
