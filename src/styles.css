@@ -154,7 +154,7 @@ video {
   padding: 150px 0 78px;
 }
 
-.hero-video,
+.star-trails,
 .hero-shade {
   position: absolute;
   inset: 0;
@@ -162,15 +162,15 @@ video {
   height: 100%;
 }
 
-.hero-video {
-  object-fit: cover;
-  opacity: 0.48;
-  filter: saturate(0.78) contrast(1.12) brightness(0.5) hue-rotate(318deg);
+.star-trails {
+  height: 100%;
+  opacity: 0.95;
+  background: #050608;
 }
 
 .hero-shade {
   background:
-    radial-gradient(circle at 78% 36%, rgba(194, 59, 131, 0.32), transparent 28%),
+    radial-gradient(circle at 78% 36%, rgba(194, 59, 131, 0.24), transparent 28%),
     radial-gradient(circle at 58% 18%, rgba(141, 214, 208, 0.13), transparent 20%),
     linear-gradient(90deg, rgba(7, 8, 9, 0.94) 0%, rgba(7, 8, 9, 0.58) 48%, rgba(7, 8, 9, 0.74) 100%),
     linear-gradient(0deg, rgba(9, 10, 11, 1) 0%, rgba(9, 10, 11, 0) 38%);
@@ -371,143 +371,117 @@ h1 {
   background: linear-gradient(180deg, #090a0b 0%, #101214 100%);
 }
 
-.prelude {
+.directory {
   padding: 132px 0;
   background:
     linear-gradient(180deg, #090a0b 0%, #111113 100%),
     radial-gradient(circle at 20% 40%, rgba(255, 111, 189, 0.12), transparent 36%);
 }
 
-.prelude-grid {
+.directory-grid {
   display: grid;
-  grid-template-columns: minmax(380px, 0.7fr) minmax(250px, 0.35fr) minmax(500px, 1fr);
+  grid-template-columns: minmax(380px, 0.48fr) minmax(700px, 1fr);
   gap: 28px;
-  align-items: stretch;
+  align-items: start;
 }
 
-.prelude-title,
-.profile-plate,
-.strip-card {
+.directory-title,
+.directory-card,
+.credential-card {
   border: 1px solid var(--line);
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.018)),
     rgba(14, 15, 17, 0.82);
 }
 
-.prelude-title {
+.directory-title {
+  position: sticky;
+  top: 124px;
   padding: 34px;
+  min-height: 420px;
 }
 
-.prelude-title h2 {
+.directory-title h2 {
   margin-bottom: 28px;
   font-size: 48px;
   line-height: 1.12;
   font-weight: 500;
 }
 
-.prelude-title p {
+.directory-title p {
   color: var(--muted);
   font-size: 17px;
   line-height: 1.8;
 }
 
-.profile-plate {
+.directory-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.directory-card {
   position: relative;
   overflow: hidden;
-  display: grid;
-  align-content: end;
-  min-height: 520px;
-}
-
-.profile-plate img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(1) contrast(1.08) brightness(0.72);
-  transition: transform 700ms ease, filter 700ms ease;
-}
-
-.profile-plate:hover img {
-  transform: scale(1.045);
-  filter: grayscale(0.55) contrast(1.1) brightness(0.82);
-}
-
-.profile-plate div {
-  position: relative;
-  z-index: 1;
-  padding: 26px;
-  background: linear-gradient(180deg, transparent, rgba(5, 6, 7, 0.95));
-}
-
-.profile-plate span,
-.strip-card span {
-  color: var(--magenta-2);
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.profile-plate strong {
-  display: block;
-  margin: 12px 0 8px;
-  font-size: 34px;
-  font-weight: 500;
-}
-
-.profile-plate em {
-  color: var(--muted);
-  font-style: normal;
-}
-
-.prelude-strips {
-  display: grid;
-  gap: 14px;
-}
-
-.strip-card {
-  position: relative;
-  overflow: hidden;
-  min-height: 118px;
+  min-height: 250px;
   display: grid;
   align-items: end;
-  padding: 18px;
-  cursor: default;
-  transition: transform 260ms ease, border-color 260ms ease, box-shadow 260ms ease;
+  padding: 22px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 420ms ease, border-color 260ms ease, box-shadow 260ms ease, opacity 420ms ease;
 }
 
-.strip-card:hover {
-  transform: translateX(-10px);
+.directory-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.directory-card:hover {
+  transform: translateY(-8px);
   border-color: rgba(255, 111, 189, 0.42);
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
 }
 
-.strip-card img {
+.directory-card img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.58;
+  opacity: 0.46;
   filter: saturate(0.75) brightness(0.72);
   transition: transform 500ms ease, opacity 500ms ease;
 }
 
-.strip-card:hover img {
+.directory-card:hover img {
   transform: scale(1.04);
   opacity: 0.78;
 }
 
-.strip-card div {
+.directory-card div {
   position: relative;
   z-index: 1;
 }
 
-.strip-card p {
+.directory-card span {
+  color: var(--magenta-2);
+  font-size: 13px;
+  letter-spacing: 0.16em;
+}
+
+.directory-card h3 {
+  margin: 18px 0 10px;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.directory-card p {
   margin: 8px 0 0;
-  color: var(--text);
-  font-size: 18px;
+  color: #d2cbc0;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 .about-grid {
@@ -604,8 +578,78 @@ h1 {
 
 .projects,
 .case-pages,
+.credentials,
 .strengths {
   padding: 132px 0;
+}
+
+.credentials {
+  background:
+    radial-gradient(circle at 82% 20%, rgba(255, 111, 189, 0.12), transparent 34%),
+    linear-gradient(180deg, #101214, #090a0b);
+}
+
+.credential-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.credential-card {
+  min-height: 330px;
+  padding: 30px;
+  opacity: 0;
+  transform: translateY(22px);
+  transition: transform 380ms ease, opacity 380ms ease, border-color 260ms ease;
+}
+
+.credential-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.credential-card:hover {
+  border-color: rgba(255, 111, 189, 0.34);
+  transform: translateY(-6px);
+}
+
+.credential-card svg {
+  margin-bottom: 42px;
+  color: var(--magenta-2);
+}
+
+.credential-card span {
+  color: var(--accent-2);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.credential-card h3 {
+  margin: 18px 0;
+  font-size: 25px;
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+.credential-card p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.award-ribbon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.award-ribbon span {
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 111, 189, 0.24);
+  background: rgba(255, 111, 189, 0.055);
+  color: #d8d2c7;
+  font-size: 14px;
 }
 
 .section-head {
@@ -634,7 +678,14 @@ h1 {
   overflow: hidden;
   border: 1px solid var(--line);
   background: var(--panel);
-  transition: transform 320ms ease, border-color 320ms ease, box-shadow 320ms ease;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: transform 420ms ease, border-color 320ms ease, box-shadow 320ms ease, opacity 420ms ease;
+}
+
+.project-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .project-card.large {
@@ -722,6 +773,14 @@ h1 {
   grid-template-columns: 360px 1fr;
   gap: 28px;
   align-items: start;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 420ms ease, transform 420ms ease;
+}
+
+.case-block.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .case-block aside {
@@ -769,6 +828,27 @@ h1 {
   gap: 18px;
 }
 
+.case-collage .case-gallery {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-flow: dense;
+}
+
+.case-collage .case-gallery figure:nth-child(1),
+.case-collage .case-gallery figure:nth-child(4) {
+  grid-column: span 2;
+}
+
+.case-collage .case-gallery figure:nth-child(1) img,
+.case-collage .case-gallery figure:nth-child(4) img {
+  height: 360px;
+  object-fit: cover;
+}
+
+.case-collage .case-gallery figure:not(:nth-child(1)):not(:nth-child(4)) img {
+  height: 230px;
+  object-fit: cover;
+}
+
 .case-gallery figure {
   margin: 0;
   overflow: hidden;
@@ -812,7 +892,14 @@ h1 {
     radial-gradient(circle at 14% 10%, rgba(255, 111, 189, 0.11), transparent 28%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.018)),
     var(--panel);
-  transition: transform 260ms ease, border-color 260ms ease;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 320ms ease, border-color 260ms ease, opacity 320ms ease;
+}
+
+.strength-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .strength-card:hover {
@@ -892,7 +979,17 @@ h1 {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .prelude-grid {
+  .directory-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .directory-title {
+    position: relative;
+    top: 0;
+    min-height: auto;
+  }
+
+  .credential-grid {
     grid-template-columns: 1fr;
   }
 
@@ -911,6 +1008,15 @@ h1 {
 
   .case-block {
     grid-template-columns: 1fr;
+  }
+
+  .case-collage .case-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .case-collage .case-gallery figure:nth-child(1),
+  .case-collage .case-gallery figure:nth-child(4) {
+    grid-column: span 1;
   }
 
   .case-block aside {
