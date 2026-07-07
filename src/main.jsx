@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
   ArrowUpRight,
@@ -11,6 +11,29 @@ import {
   Camera,
 } from 'lucide-react';
 import './styles.css';
+
+const preludeStrips = [
+  {
+    title: 'Portfolio Cover',
+    label: '萬千炁象 / Plain paper thousand noodles',
+    image: '/assets/portfolio-web/page-03-3.webp',
+  },
+  {
+    title: '地球之盐',
+    label: '盐湖湿地生态鸟岛与盐文化场景重塑',
+    image: '/assets/portfolio-web/page-03-5.webp',
+  },
+  {
+    title: '汐月书庭',
+    label: '西南民大航空港校区图书馆改造',
+    image: '/assets/portfolio-web/page-03-6.webp',
+  },
+  {
+    title: '秋风市集',
+    label: '城市更新背景下的创意集市空间',
+    image: '/assets/portfolio-web/page-03-8.webp',
+  },
+];
 
 const projects = [
   {
@@ -121,13 +144,25 @@ const stats = [
 ];
 
 function App() {
+  useEffect(() => {
+    const handlePointer = (event) => {
+      document.documentElement.style.setProperty('--cursor-x', `${event.clientX}px`);
+      document.documentElement.style.setProperty('--cursor-y', `${event.clientY}px`);
+    };
+
+    window.addEventListener('pointermove', handlePointer);
+    return () => window.removeEventListener('pointermove', handlePointer);
+  }, []);
+
   return (
     <>
+      <div className="ambient-cursor" aria-hidden="true" />
       <header className="site-nav">
         <a className="brand" href="#hero" aria-label="返回首页">
           LJH
         </a>
         <nav aria-label="主导航">
+          <a href="#prelude">序章</a>
           <a href="#about">经历</a>
           <a href="#projects">项目</a>
           <a href="#cases">内页</a>
@@ -157,20 +192,65 @@ function App() {
           </video>
           <div className="hero-shade" />
           <div className="container hero-content">
-            <p className="eyebrow">Spatial Design / AI Design / Environmental Design</p>
-            <h1>李建华</h1>
-            <p className="hero-lead">
-              以空间为媒介，连接场地研究、叙事表达与 AI 生成技术，建立克制而有张力的设计方案。
-            </p>
-            <div className="hero-actions">
-              <a className="primary-link" href="#projects">
-                查看精选项目
-                <ArrowUpRight size={18} />
-              </a>
-              <a className="ghost-link" href="tel:13408554084">
-                <Phone size={18} />
-                13408554084
-              </a>
+            <div className="hero-copy">
+              <p className="eyebrow">Application Portfolio For Environmental Design</p>
+              <h1>李建华</h1>
+              <div className="hero-theme">
+                <span>萬千炁象</span>
+                <strong>当空白开始汲取空间</strong>
+                <em>When the blank begins to absorb space</em>
+              </div>
+              <p className="hero-lead">
+                以空间为媒介，连接场地研究、叙事表达与 AI 生成技术，建立克制而有张力的设计方案。
+              </p>
+              <div className="hero-actions">
+                <a className="primary-link" href="#prelude">
+                  进入作品集
+                  <ArrowUpRight size={18} />
+                </a>
+                <a className="ghost-link" href="tel:13408554084">
+                  <Phone size={18} />
+                  13408554084
+                </a>
+              </div>
+            </div>
+            <div className="cover-panel" aria-label="作品集封面主题">
+              <span className="cover-index">2024 Portfolio</span>
+              <p>Plain Paper</p>
+              <h2>萬千炁象</h2>
+              <strong>Space absorbs silence, image grows from blankness.</strong>
+              <i>Jianhua Li / Environmental Design</i>
+            </div>
+          </div>
+        </section>
+
+        <section className="prelude section" id="prelude">
+          <div className="container prelude-grid">
+            <div className="prelude-title">
+              <p className="section-kicker">Portfolio Prelude</p>
+              <h2>从封面、个人页到目录，建立作品集的第一层叙事。</h2>
+              <p>
+                参考作品集前三页的纸张肌理、留白、洋红色标记和横向目录图条，将原本的打印版语言转译为网页首屏后的浏览入口。
+              </p>
+            </div>
+            <div className="profile-plate">
+              <img src="/assets/portfolio-web/page-02-1.webp" alt="作品集第二页人物图" />
+              <div>
+                <span>Writer's info</span>
+                <strong>Jianhua Li</strong>
+                <em>Spatial / AI / Environmental Design</em>
+              </div>
+            </div>
+            <div className="prelude-strips">
+              {preludeStrips.map((strip) => (
+                <article className="strip-card" key={strip.title}>
+                  <img src={strip.image} alt={strip.label} />
+                  <div>
+                    <span>{strip.title}</span>
+                    <p>{strip.label}</p>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -238,7 +318,7 @@ function App() {
                     <p>{project.summary}</p>
                     <footer>
                       <b>{project.role}</b>
-                      <em>{project.meta}</em>
+                      <a href="#cases">{project.meta}</a>
                     </footer>
                   </div>
                 </article>
