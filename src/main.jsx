@@ -37,6 +37,29 @@ const preludeStrips = [
 
 const projects = [
   {
+    title: '万千炁象品牌视觉系统设计',
+    role: '品牌设计 / 视觉识别',
+    time: '2025.06',
+    image: '/assets/qixiang/qixiang-pdf-11-1.webp',
+    meta: 'Brand Identity / Visual System',
+    summary:
+      '为 FOCUS DESIGN 设计平台与梁建国环境设计与陈设艺术研究所联合发起的设计交流活动建立品牌视觉系统，围绕“万千”与“炁象”的东方哲学语义，完成标志、色彩、物料和延展应用。',
+    pages: [
+      '/assets/qixiang/qixiang-pdf-11-1.webp',
+      '/assets/qixiang/qixiang-pdf-13-1.webp',
+      '/assets/qixiang/qixiang-pdf-14-1.webp',
+      '/assets/qixiang/qixiang-pdf-17-1.webp',
+      '/assets/qixiang/qixiang-pdf-27-1.webp',
+      '/assets/qixiang/qixiang-pdf-28-1.webp',
+      '/assets/qixiang/qixiang-pdf-34-1.webp',
+      '/assets/qixiang/qixiang-pdf-36-1.webp',
+      '/assets/qixiang/qixiang-pdf-40-1.webp',
+      '/assets/qixiang/qixiang-pdf-48-1.webp',
+      '/assets/qixiang/qixiang-pdf-49-1.webp',
+      '/assets/qixiang/qixiang-pdf-51-1.webp',
+    ],
+  },
+  {
     title: '地球之盐 - 运城盐湖湿地生态鸟岛与盐文化场景重塑设计',
     role: '生态场景 / 盐文化叙事',
     time: 'Portfolio 2024',
@@ -101,14 +124,14 @@ const projects = [
     title: '从“游走”到“扎根”数字游民社区办公空间设计',
     role: '乡村振兴 / 社区办公',
     time: 'Portfolio 2024',
-    image: '/assets/portfolio-web/page-22-1.webp',
+    image: '/assets/portfolio-web/page-13-1.webp',
     meta: 'Nomad Community / Rural Revitalization',
     summary:
       '从数字游民的迁移、共创与长期驻留需求出发，探索乡村语境下的复合办公、生活和社群空间。',
     pages: [
-      '/assets/portfolio-web/page-22-1.webp',
-      '/assets/portfolio-web/page-23-1.webp',
-      '/assets/portfolio-web/page-23-2.webp',
+      '/assets/portfolio-web/page-13-1.webp',
+      '/assets/portfolio-web/page-14-1.webp',
+      '/assets/portfolio-web/page-15-1.webp',
     ],
   },
 ];
