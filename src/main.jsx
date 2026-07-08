@@ -16,6 +16,12 @@ import './styles.css';
 
 const directoryItems = [
   {
+    title: '循析而栖',
+    label: '运城盐湖盐畦肌理下的多层次生境营建与游赏系统',
+    href: '#cases',
+    image: '/assets/grad-design/page-1.webp',
+  },
+  {
     title: '万千炁象品牌视觉系统设计',
     label: '品牌视觉 / 物料应用 / 设计活动识别',
     href: '#cases',
@@ -54,6 +60,21 @@ const directoryItems = [
 ];
 
 const projects = [
+  {
+    title: '循析而栖 - 运城盐湖盐畦肌理下的多层次生境营建与游赏系统设计',
+    role: '毕业设计 / 湿地生态修复',
+    time: '2026 Graduation Design',
+    image: '/assets/grad-design/page-1.webp',
+    meta: 'Habitat Design / Eco-tourism System',
+    summary:
+      '以运城盐湖盐畦肌理为基础，整合生态安全格局、生境营建、游赏系统和文化科普体验，构建兼具生态修复、城市更新和盐文化展示的多层次湿地设计方案。',
+    pages: [
+      '/assets/grad-design/page-1.webp',
+      '/assets/grad-design/page-2.webp',
+      '/assets/grad-design/page-3.webp',
+      '/assets/grad-design/page-4.webp',
+    ],
+  },
   {
     title: '万千炁象品牌视觉系统设计',
     role: '品牌设计 / 视觉识别',

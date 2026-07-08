@@ -23,11 +23,13 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   min-width: 0;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at var(--cursor-x) var(--cursor-y), rgba(194, 59, 131, 0.12), transparent 240px),
     radial-gradient(circle at 12% 20%, rgba(199, 166, 107, 0.09), transparent 28%),
@@ -200,6 +202,7 @@ h2,
 h3,
 p {
   margin-top: 0;
+  overflow-wrap: anywhere;
 }
 
 h1 {
@@ -1029,5 +1032,155 @@ h1 {
 @media (max-width: 1080px) {
   .hero-content {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .container,
+  .site-nav {
+    width: calc(100% - 28px);
+  }
+
+  .site-nav {
+    top: 12px;
+    height: auto;
+    min-height: 58px;
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 10px;
+    padding: 10px 12px;
+  }
+
+  .brand {
+    font-size: 17px;
+  }
+
+  .site-nav nav {
+    justify-content: flex-start;
+    gap: 18px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    white-space: nowrap;
+    font-size: 12px;
+    scrollbar-width: none;
+  }
+
+  .site-nav nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-contact {
+    display: none;
+  }
+
+  .section {
+    scroll-margin-top: 82px;
+  }
+
+  .hero {
+    min-height: 100svh;
+    padding: 118px 0 54px;
+  }
+
+  h1 {
+    font-size: clamp(46px, 16vw, 66px);
+    line-height: 0.98;
+  }
+
+  .hero-theme span {
+    font-size: clamp(48px, 17vw, 72px);
+  }
+
+  .hero-theme strong {
+    font-size: 19px;
+  }
+
+  .hero-lead {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .cover-panel {
+    min-height: 360px;
+    padding: 24px;
+  }
+
+  .about-grid,
+  .section-head,
+  .project-grid,
+  .stats-panel,
+  .strength-grid,
+  .case-block {
+    grid-template-columns: 1fr;
+  }
+
+  .directory {
+    padding: 90px 0;
+  }
+
+  .directory-title {
+    padding: 24px;
+  }
+
+  .directory-title h2,
+  .about-copy h2,
+  .section-head h2,
+  .contact h2 {
+    font-size: clamp(34px, 11vw, 48px);
+  }
+
+  .directory-card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .directory-card img {
+    min-height: 190px;
+  }
+
+  .project-card,
+  .project-card.large {
+    grid-column: span 1;
+    min-height: 420px;
+  }
+
+  .project-card img {
+    min-height: 420px;
+  }
+
+  .project-info {
+    padding: 24px;
+  }
+
+  .project-info h3 {
+    font-size: 24px;
+  }
+
+  .case-detail {
+    padding: 88px 0;
+  }
+
+  .case-block aside {
+    padding: 24px;
+  }
+
+  .case-collage .case-gallery,
+  .case-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .case-collage .case-gallery figure:nth-child(1),
+  .case-collage .case-gallery figure:nth-child(4) {
+    grid-column: span 1;
+  }
+
+  .case-collage .case-gallery figure:nth-child(1) img,
+  .case-collage .case-gallery figure:nth-child(4) img,
+  .case-collage .case-gallery figure:not(:nth-child(1)):not(:nth-child(4)) img {
+    height: auto;
+  }
+
+  .contact {
+    min-height: 100svh;
+    padding: 96px 0;
   }
 }
